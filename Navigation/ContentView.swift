@@ -11,17 +11,22 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                Text("This is the root view")
+                Text("This is the home view")
                     .font(.largeTitle)
-                NavigationLink(destination: SecondView()) {
-                    Text("Click me!")
+                NavigationLink(destination: About()) {
+                    Text("About")
                         .fontWeight(.bold)
                         .foregroundColor(Color.purple)
                 }
-                NavigationLink(destination: Text("Tada! 🎉").foregroundColor(Color.orange).multilineTextAlignment(.center)) {
-                    Text("Click me too!")
+                NavigationLink(destination: Contact()) {
+                    Text("Contact")
                         .fontWeight(.bold)
                         .foregroundColor(Color.orange)
+                }
+                NavigationLink(destination: Help()) {
+                    Image(systemName: "questionmark.circle")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.green)
                 }
             }
             .navigationTitle("Home")
